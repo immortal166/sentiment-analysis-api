@@ -12,8 +12,8 @@ app = FastAPI(
 # Initializing sentiment analysis model
 sentiment_analyzer = pipeline(
     "sentiment-analysis",
-    model="cardiffnlp/twitter-roberta-base-sentiment-latest",
-    device=0 if torch.cuda.is_available() else -1
+    model="distilbert-base-uncased-finetuned-sst-2-english",
+    device=-1
 )
 
 class AnalysisRequest(BaseModel):
